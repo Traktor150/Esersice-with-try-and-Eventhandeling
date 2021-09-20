@@ -25,6 +25,19 @@ namespace Calkulator_Better_Code
             btn_Subtract.Click += new EventHandler(btnEvent);
             btn_Multiply.Click += new EventHandler(btnEvent);
             btn_Divide.Click += new EventHandler(btnEvent);
+
+            txb_Input1.KeyPress += new KeyPressEventHandler(KeyControl);
+        }
+
+        private void KeyControl(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar < '0' || e.KeyChar > '9')
+            {
+                if (((short)e.KeyChar) != 8)
+                {
+                    e.Handled = true;
+                }   
+            }
         }
 
         private void btnEvent(object sender, EventArgs e)
