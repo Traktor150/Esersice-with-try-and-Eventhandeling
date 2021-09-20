@@ -20,45 +20,42 @@ namespace Calkulator_Better_Code
             btn_Subtract.Text = "-";
             btn_Multiply.Text = "*";
             btn_Divide.Text = "/";
+
+            btn_Add.Click += new EventHandler(btnEvent); 
+            btn_Subtract.Click += new EventHandler(btnEvent);
+            btn_Multiply.Click += new EventHandler(btnEvent);
+            btn_Divide.Click += new EventHandler(btnEvent);
         }
 
-        private void btn_Add_Click(object sender, EventArgs e)
+        private void btnEvent(object sender, EventArgs e)
         {
+            Button btn = sender as Button;
+            
             double input1 = double.Parse(txb_Input1.Text);
             double input2 = double.Parse(txb_Input2.Text);
+            double anser = 0;
 
-            double anser = MyEngine.Add(input1, input2);
-            Show_Result(input1, input2, anser, (sender as Button).Text);
+            switch (btn.Text)
+            {
+                case "+":
+                    anser = MyEngine.Add(input1, input2);
+                    break;
+                case "-":
+                    anser = MyEngine.Subtract(input1, input2);
+                    break;
+                case "*":
+                    anser = MyEngine.Multiply(input1, input2);
+                    break;
+                case "/":
+                    anser = MyEngine.Divide(input1, input2);
+                    break;
+                default:
+                    break;
+            }
+            
+            Show_Result(input1, input2, anser, btn.Text);
         }
 
-       
-
-        private void btn_Subtract_Click(object sender, EventArgs e)
-        {
-            double input1 = double.Parse(txb_Input1.Text);
-            double input2 = double.Parse(txb_Input2.Text);
-
-            double anser = MyEngine.Subtract(input1, input2);
-            Show_Result(input1, input2, anser, (sender as Button).Text);
-        }
-
-        private void btn_Multiply_Click(object sender, EventArgs e)
-        {
-            double input1 = double.Parse(txb_Input1.Text);
-            double input2 = double.Parse(txb_Input2.Text);
-
-            double anser = MyEngine.Multiply(input1, input2);
-            Show_Result(input1, input2, anser, (sender as Button).Text);
-        }
-
-        private void btn_Divide_Click(object sender, EventArgs e)
-        {
-            double input1 = double.Parse(txb_Input1.Text);
-            double input2 = double.Parse(txb_Input2.Text);
-
-            double anser = MyEngine.Divide(input1, input2);
-            Show_Result(input1, input2, anser, (sender as Button).Text);
-        } 
         private void Show_Result(double input1, double input2, double anser, string operation)
         {
             lib_Result.Items.Add($"{input1} {operation} {input2} = {anser}");

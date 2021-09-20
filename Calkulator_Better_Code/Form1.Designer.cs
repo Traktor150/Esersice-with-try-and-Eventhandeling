@@ -46,7 +46,7 @@ namespace Calkulator_Better_Code
             this.btn_Add.TabIndex = 0;
             this.btn_Add.Text = "button1";
             this.btn_Add.UseVisualStyleBackColor = true;
-            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
+            
             // 
             // btn_Subtract
             // 
@@ -56,7 +56,7 @@ namespace Calkulator_Better_Code
             this.btn_Subtract.TabIndex = 1;
             this.btn_Subtract.Text = "button2";
             this.btn_Subtract.UseVisualStyleBackColor = true;
-            this.btn_Subtract.Click += new System.EventHandler(this.btn_Subtract_Click);
+            
             // 
             // btn_Multiply
             // 
@@ -66,7 +66,7 @@ namespace Calkulator_Better_Code
             this.btn_Multiply.TabIndex = 2;
             this.btn_Multiply.Text = "button3";
             this.btn_Multiply.UseVisualStyleBackColor = true;
-            this.btn_Multiply.Click += new System.EventHandler(this.btn_Multiply_Click);
+            
             // 
             // btn_Divide
             // 
@@ -76,7 +76,7 @@ namespace Calkulator_Better_Code
             this.btn_Divide.TabIndex = 3;
             this.btn_Divide.Text = "button4";
             this.btn_Divide.UseVisualStyleBackColor = true;
-            this.btn_Divide.Click += new System.EventHandler(this.btn_Divide_Click);
+            
             // 
             // txb_Input1
             // 
