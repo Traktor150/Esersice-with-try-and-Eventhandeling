@@ -34,26 +34,34 @@ namespace Calkulator_Better_Code
             double input1 = double.Parse(txb_Input1.Text);
             double input2 = double.Parse(txb_Input2.Text);
             double anser = 0;
+            //try
+            //{
+                switch (btn.Text)
+                {
+                    case "+":
+                        anser = MyEngine.Add(input1, input2);
+                        break;
+                    case "-":
+                        anser = MyEngine.Subtract(input1, input2);
+                        break;
+                    case "*":
+                        anser = MyEngine.Multiply(input1, input2);
+                        break;
+                    case "/":
+                        anser = MyEngine.Divide(input1, input2);
+                        break;
+                    default:
+                        break;
+                }
 
-            switch (btn.Text)
+                Show_Result(input1, input2, anser, btn.Text);
+           /* }
+            catch (DivideByZeroException)
             {
-                case "+":
-                    anser = MyEngine.Add(input1, input2);
-                    break;
-                case "-":
-                    anser = MyEngine.Subtract(input1, input2);
-                    break;
-                case "*":
-                    anser = MyEngine.Multiply(input1, input2);
-                    break;
-                case "/":
-                    anser = MyEngine.Divide(input1, input2);
-                    break;
-                default:
-                    break;
-            }
-            
-            Show_Result(input1, input2, anser, btn.Text);
+                //lib_Result.Items.Add($"{input1} / {input2} = Err(can not divide by 0)");
+                MessageBox.Show($"{input1} / {input2} = Err(can not divide by 0)");
+                throw;
+            }*/
         }
 
         private void Show_Result(double input1, double input2, double anser, string operation)

@@ -8,9 +8,6 @@ namespace Calkulator_Better_Code
 {
     class Calc_Engine
     {
-
-
-
         public double Add(double number1, double number2)
         {
             return number1 + number2;
